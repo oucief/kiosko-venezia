@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fdf8f2;
+    color: #2c1810;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .text-shadow-warm {
+    text-shadow: 0 2px 8px rgba(61, 31, 10, 0.4);
+  }
+
+  /* Hide scrollbar but keep scroll */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Hero gradient overlay */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(61, 31, 10, 0.55) 0%,
+    rgba(61, 31, 10, 0.20) 40%,
+    rgba(61, 31, 10, 0.72) 100%
+  );
+}
+
+/* Card hover lift */
+.menu-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(61, 31, 10, 0.15);
+}
+
+/* Sticky footer safe area */
+.sticky-footer {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
